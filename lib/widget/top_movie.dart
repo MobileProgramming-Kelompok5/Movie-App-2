@@ -29,8 +29,14 @@ class _TopMoviesState extends State<TopMovies> {
             style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.w500,
-                fontSize: 12.0),
+                fontSize: 13.0),
           ),
+        ),
+        Divider(
+          color: Colors.white,
+          indent: 10,
+          endIndent: MediaQuery.of(context).size.width * 0.85,
+          thickness: 1,
         ),
         SizedBox(
           height: 5.0,
