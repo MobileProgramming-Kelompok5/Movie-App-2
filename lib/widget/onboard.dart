@@ -60,7 +60,7 @@ class _OnboardingScreen extends State<Onboarding> {
               children: <Widget>[
                 Container(
                   alignment: Alignment.centerRight,
-                  child: FlatButton(
+                  child: TextButton(
                     onPressed: () {
                       Navigator.push(
                       context,
@@ -204,7 +204,7 @@ class _OnboardingScreen extends State<Onboarding> {
                     ? Expanded(
                         child: Align(
                           alignment: FractionalOffset.bottomRight,
-                          child: FlatButton(
+                          child: TextButton(
                             onPressed: () {
                               _pageController.nextPage(
                                 duration: Duration(milliseconds: 500),
