@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app_3/style/theme.dart' as style;
 import 'package:movie_app_3/widget/drawer.dart';
 import 'package:movie_app_3/widget/home_screen1.dart';
 
