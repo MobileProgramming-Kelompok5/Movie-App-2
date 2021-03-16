@@ -90,7 +90,7 @@ class _FirstContainerState extends State<FirstContainer> {
       );
     } else
       return Container(
-        height: MediaQuery.of(context).size.height * 0.45,
+        height: MediaQuery.of(context).size.height * 0.4,
         child: PageIndicatorContainer(
           align: IndicatorAlign.bottom,
           length: movies.take(5).length,
@@ -112,7 +112,7 @@ class _FirstContainerState extends State<FirstContainer> {
                       tag: movies[index].id,
                       child: Container(
                           width: MediaQuery.of(context).size.width,
-                          height: MediaQuery.of(context).size.height * 0.45,
+                          height: MediaQuery.of(context).size.height * 0.4,
                           decoration: new BoxDecoration(
                             shape: BoxShape.rectangle,
                             image: new DecorationImage(
@@ -164,7 +164,8 @@ class _FirstContainerState extends State<FirstContainer> {
                                     height: 1.5,
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 18.0),
+                                    fontFamily: 'Poppins',
+                                    fontSize: 17.0),
                               ),
                             ],
                           ),

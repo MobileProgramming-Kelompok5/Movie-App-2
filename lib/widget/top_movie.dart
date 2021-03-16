@@ -23,19 +23,20 @@ class _TopMoviesState extends State<TopMovies> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.only(left: 10.0, top: 20.0),
+          padding: const EdgeInsets.only(left: 15.0, top: 20.0),
           child: Text(
             "TOP MOVIES",
             style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.w500,
-                fontSize: 13.0),
+                fontFamily: 'Poppins',
+                fontSize: 14.0),
           ),
         ),
         Divider(
           color: Colors.white,
-          indent: 10,
-          endIndent: MediaQuery.of(context).size.width * 0.85,
+          indent: 16,
+          endIndent: MediaQuery.of(context).size.width * 0.84,
           thickness: 1,
         ),
         SizedBox(
@@ -110,7 +111,7 @@ class _TopMoviesState extends State<TopMovies> {
       );
     } else
       return Container(
-        height: 270.0,
+        height: MediaQuery.of(context).size.height * 0.37 - 5,
         padding: EdgeInsets.only(left: 10.0),
         child: ListView.builder(
           scrollDirection: Axis.vertical,
@@ -132,10 +133,11 @@ class _TopMoviesState extends State<TopMovies> {
                         tag: movies[index].id,
                         child: Container(
                             width: 120.0,
-                            height: 180.0,
+                            height: 190.0,
                             decoration: new BoxDecoration(
                               borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(20),
+                                bottomLeft: Radius.circular(20),
                                 bottomRight: Radius.circular(40),
                               ),
                               shape: BoxShape.rectangle,
@@ -150,7 +152,7 @@ class _TopMoviesState extends State<TopMovies> {
                         width: 40,
                       ),
                       Container(
-                        width: 200,
+                        width: MediaQuery.of(context).size.width * 0.45,
                         child: Column(
                           children: [
                             SizedBox(
@@ -158,17 +160,41 @@ class _TopMoviesState extends State<TopMovies> {
                             ),
                             Text(
                               movies[index].title,
+                              maxLines: 3,
+                              style: TextStyle(
+                                  height: 1.4,
+                                  color: Style.Colors.titleColor,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Poppins',
+                                  fontSize: 15.0),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Chip(
+                              label: Text(
+                                'Rating: ' + movies[index].rating.toString(),
+                                style: TextStyle(fontFamily: 'Raleway'),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              movies[index].overview,
+                              textAlign: TextAlign.justify,
                               maxLines: 2,
                               style: TextStyle(
                                   height: 1.4,
                                   color: Style.Colors.titleColor,
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 15.0),
+                                  fontFamily: 'Raleway',
+                                  fontSize: 11.0),
                             ),
+                            Text("..."),
                             SizedBox(
                               height: 20,
                             ),
-                            Text('Rating: ' + movies[index].rating.toString()),
                             // RatingBar(
                             //   itemSize: 8.0,
                             //   initialRating: movies[index].rating / 2,
