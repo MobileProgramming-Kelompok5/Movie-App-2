@@ -12,6 +12,6 @@ class GenreResponse {
         error = "";
 
   GenreResponse.withError(String errorValue)
-      : genres = List(),
+      : genres = List.empty(growable: true),
         error = errorValue;
 }

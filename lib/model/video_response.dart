@@ -13,6 +13,6 @@ class VideoResponse {
         error = "";
 
   VideoResponse.withError(String errorValue)
-      : videos = List(),
+      : videos = List.empty(growable: true),
         error = errorValue;
 }

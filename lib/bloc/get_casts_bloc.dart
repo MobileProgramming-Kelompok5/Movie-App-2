@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app_3/model/cast_response.dart';
-import 'package:movie_app_3/model/video_response.dart';
 import 'package:movie_app_3/repository/repository.dart';
 import 'package:rxdart/rxdart.dart';
 

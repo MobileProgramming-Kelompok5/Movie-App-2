@@ -13,6 +13,6 @@ class PersonResponse {
         error = "";
 
   PersonResponse.withError(String errorValue)
-      : persons = List(),
+      : persons = List.empty(growable: true),
         error = errorValue;
 }

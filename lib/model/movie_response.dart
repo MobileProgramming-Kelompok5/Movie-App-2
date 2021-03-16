@@ -13,6 +13,6 @@ class MovieResponse {
         error = "";
 
   MovieResponse.withError(String errorValue)
-      : movies = List(),
+      : movies = List.empty(growable: true),
         error = errorValue;
 }
