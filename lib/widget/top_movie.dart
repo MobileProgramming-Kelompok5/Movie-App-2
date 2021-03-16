@@ -149,35 +149,44 @@ class _TopMoviesState extends State<TopMovies> {
                       SizedBox(
                         width: 40,
                       ),
-                      Column(
-                        children: [
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Text(
-                            movies[index].title,
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Text('Rating: ' + movies[index].rating.toString()),
-                          // RatingBar(
-                          //   itemSize: 8.0,
-                          //   initialRating: movies[index].rating / 2,
-                          //   minRating: 1,
-                          //   direction: Axis.horizontal,
-                          //   allowHalfRating: true,
-                          //   itemCount: 5,
-                          //   itemPadding: EdgeInsets.symmetric(horizontal: 2.0),
-                          //   itemBuilder: (context, _) => Icon(
-                          //     EvaIcons.star,
-                          //     color: Style.Colors.secondColor,
-                          //   ),
-                          //   onRatingUpdate: (rating) {
-                          //     print(rating);
-                          //   },
-                          // )
-                        ],
+                      Container(
+                        width: 200,
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Text(
+                              movies[index].title,
+                              maxLines: 2,
+                              style: TextStyle(
+                                  height: 1.4,
+                                  color: Style.Colors.titleColor,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15.0),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Text('Rating: ' + movies[index].rating.toString()),
+                            // RatingBar(
+                            //   itemSize: 8.0,
+                            //   initialRating: movies[index].rating / 2,
+                            //   minRating: 1,
+                            //   direction: Axis.horizontal,
+                            //   allowHalfRating: true,
+                            //   itemCount: 5,
+                            //   itemPadding: EdgeInsets.symmetric(horizontal: 2.0),
+                            //   itemBuilder: (context, _) => Icon(
+                            //     EvaIcons.star,
+                            //     color: Style.Colors.secondColor,
+                            //   ),
+                            //   onRatingUpdate: (rating) {
+                            //     print(rating);
+                            //   },
+                            // )
+                          ],
+                        ),
                       )
                       // Column(
                       //   children: [
