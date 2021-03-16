@@ -43,11 +43,14 @@ class _HomeScreenState extends State<HomeScreen>
           backgroundColor: Colors.transparent,
           appBar: AppBar(
             elevation: 0,
-            title: Text('Moviez',
-                style: TextStyle(
-                  fontSize: 24,
-                  color: Colors.white,
-                )),
+            title: Text(
+              'Moviez',
+              style: TextStyle(
+                fontSize: 24,
+                color: Colors.white,
+                fontFamily: 'Poppins',
+              ),
+            ),
             backgroundColor: Colors.transparent,
             centerTitle: true,
             actions: [
@@ -68,14 +71,14 @@ class _HomeScreenState extends State<HomeScreen>
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
                   child: Text(
                     'Top Movies',
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 16, fontFamily: 'Raleway'),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
                   child: Text(
                     'Genres',
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 16, fontFamily: 'Raleway'),
                   ),
                 ),
               ],

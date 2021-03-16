@@ -60,6 +60,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                 style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.w600,
+                  fontFamily: 'Poppins',
                   color: Colors.white,
                 ),
               ),
@@ -68,7 +69,11 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
               ),
               Text(
                 widget.descriptions,
-                style: TextStyle(fontSize: 14, color: Colors.white),
+                style: TextStyle(
+                  fontSize: 14,
+                  fontFamily: 'Raleway',
+                  color: Colors.white,
+                ),
                 textAlign: TextAlign.center,
               ),
               SizedBox(

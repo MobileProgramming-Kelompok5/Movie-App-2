@@ -52,7 +52,10 @@ class MyDrawer extends StatelessWidget {
                       ),
                       title: Text(
                         'Help',
-                        style: TextStyle(color: Colors.white, fontSize: 20),
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontFamily: 'Raleway'),
                       ),
                       onTap: () {},
                     ),
@@ -66,7 +69,10 @@ class MyDrawer extends StatelessWidget {
                       ),
                       title: Text(
                         'About us',
-                        style: TextStyle(color: Colors.white, fontSize: 20),
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontFamily: 'Raleway'),
                       ),
                       onTap: () {
                         showDialog(
