@@ -21,7 +21,16 @@ class _TopMoviesState extends State<TopMovies> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.only(left: 15.0, top: 20.0),
+          padding: const EdgeInsets.only(top: 8.0),
+          child: Divider(
+            color: Style.Colors.thirdColor,
+            indent: MediaQuery.of(context).size.width * 0.45,
+            endIndent: MediaQuery.of(context).size.width * 0.45,
+            thickness: 5,
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 15.0, top: 15.0),
           child: Text(
             "Suggested for you",
             style: TextStyle(
@@ -109,7 +118,7 @@ class _TopMoviesState extends State<TopMovies> {
       );
     } else
       return Container(
-        height: MediaQuery.of(context).size.height * 0.715,
+        height: MediaQuery.of(context).size.height * 0.7,
         padding: EdgeInsets.only(left: 10.0),
         child: ListView.builder(
           scrollDirection: Axis.vertical,

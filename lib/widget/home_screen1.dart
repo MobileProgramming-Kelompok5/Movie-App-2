@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_app_3/widget/now_playing.dart';
 import 'package:movie_app_3/widget/top_movie.dart';
 import 'package:sliding_sheet/sliding_sheet.dart';
+import 'package:movie_app_3/style/theme.dart' as Style;
 
 class FirstTab extends StatefulWidget {
   @override
@@ -28,6 +29,7 @@ class _FirstTabState extends State<FirstTab> {
           children: <Widget>[
             FirstContainer(),
             SlidingSheet(
+              backdropColor: Style.Colors.thirdColor.withOpacity(0.8),
               elevation: 5,
               cornerRadius: 30,
               snapSpec: const SnapSpec(
