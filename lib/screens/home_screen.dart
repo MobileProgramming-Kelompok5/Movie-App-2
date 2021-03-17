@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app_3/widget/drawer.dart';
+import 'package:movie_app_3/widget/genres_list.dart';
 import 'package:movie_app_3/widget/home_screen1.dart';
+import 'package:movie_app_3/widget/home_screen2.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -93,10 +95,11 @@ class _HomeScreenState extends State<HomeScreen>
               //   style: Theme.of(context).textTheme.bodyText1,
               // ),
               FirstTab(),
-              Text(
-                'first',
-                style: Theme.of(context).textTheme.bodyText1,
-              ),
+              GenresScreen(),
+              // Text(
+              //   'first',
+              //   style: Theme.of(context).textTheme.bodyText1,
+              // ),
             ],
           ),
         ),
