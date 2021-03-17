@@ -69,15 +69,20 @@ class _GenresListState extends State<GenresList>
             //     ),
             //   ),
             // ),
-            body: TabBarView(
-              controller: _tabController,
-              physics: NeverScrollableScrollPhysics(),
-              children: genres.map((Genre genre) {
-                return GenreMovies(
-                  genreId: genre.id,
-                );
-              }).toList(),
-            ),
+            body: Container(
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("assets/images/Background.png"),
+                        fit: BoxFit.cover)),
+                child: TabBarView(
+                  controller: _tabController,
+                  physics: NeverScrollableScrollPhysics(),
+                  children: genres.map((Genre genre) {
+                    return GenreMovies(
+                      genreId: genre.id,
+                    );
+                  }).toList(),
+                )),
             bottomNavigationBar: Container(
               padding: EdgeInsets.symmetric(vertical: 5),
               child: TabBar(

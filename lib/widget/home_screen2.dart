@@ -68,6 +68,7 @@ class _GenresScreenState extends State<GenresScreen> {
     print(genres);
     if (genres.length == 0) {
       return Container(
+        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/images/Background.png"))),
         width: MediaQuery.of(context).size.width,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

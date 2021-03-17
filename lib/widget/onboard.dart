@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:movie_app_3/screens/home_screen.dart';
-
+import '../style/theme.dart' as style;
 
 class Onboarding extends StatefulWidget {
   @override
@@ -41,6 +41,9 @@ class _OnboardingScreen extends State<Onboarding> {
         value: SystemUiOverlayStyle.light,
         child: Container(
           decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("assets/images/Background.png"),
+                fit: BoxFit.cover),
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
@@ -63,8 +66,8 @@ class _OnboardingScreen extends State<Onboarding> {
                   child: TextButton(
                     onPressed: () {
                       Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => HomeScreen()),
+                        context,
+                        MaterialPageRoute(builder: (context) => HomeScreen()),
                       );
                     },
                     child: Text(
@@ -72,6 +75,7 @@ class _OnboardingScreen extends State<Onboarding> {
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 20.0,
+                        fontFamily: 'Poppins',
                       ),
                     ),
                   ),
@@ -88,7 +92,11 @@ class _OnboardingScreen extends State<Onboarding> {
                     },
                     children: <Widget>[
                       Padding(
-                        padding: EdgeInsets.only(top:70.0,left: 40.0,right: 40.0,),
+                        padding: EdgeInsets.only(
+                          top: 70.0,
+                          left: 40.0,
+                          right: 40.0,
+                        ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
@@ -106,8 +114,9 @@ class _OnboardingScreen extends State<Onboarding> {
                               'Welcome',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 21.0,
+                                fontSize: 22.0,
                                 height: 1.5,
+                                fontFamily: 'Poppins',
                               ),
                             ),
                             SizedBox(height: 30.0),
@@ -124,7 +133,11 @@ class _OnboardingScreen extends State<Onboarding> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(top:70.0,left: 40.0,right: 40.0,),
+                        padding: EdgeInsets.only(
+                          top: 70.0,
+                          left: 40.0,
+                          right: 40.0,
+                        ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
@@ -142,8 +155,9 @@ class _OnboardingScreen extends State<Onboarding> {
                               'Purpose',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 21.0,
+                                fontSize: 22.0,
                                 height: 1.5,
+                                fontFamily: 'Poppins',
                               ),
                             ),
                             SizedBox(height: 30.0),
@@ -153,13 +167,18 @@ class _OnboardingScreen extends State<Onboarding> {
                                 color: Colors.white,
                                 fontSize: 16.0,
                                 height: 1.2,
+                                fontFamily: 'Raleway',
                               ),
                             ),
                           ],
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(top:70.0,left: 40.0,right: 40.0,),
+                        padding: EdgeInsets.only(
+                          top: 70.0,
+                          left: 40.0,
+                          right: 40.0,
+                        ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
@@ -174,20 +193,22 @@ class _OnboardingScreen extends State<Onboarding> {
                             ),
                             SizedBox(height: 50.0),
                             Text(
-                              'Creator',
+                              'Enjoy',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 21.0,
-                                height: 1.5
+                                fontSize: 22.0,
+                                height: 1.5,
+                                fontFamily: 'Poppins',
                               ),
                             ),
                             SizedBox(height: 30.0),
                             Text(
-                              'Adela, Caroline, Cordellya, David, Valentino',
+                              'We assure you that you will forgot about the concept of time, enjoy your stay!!',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16.0,
                                 height: 1.2,
+                                fontFamily: 'Raleway',
                               ),
                             ),
                           ],
@@ -202,71 +223,73 @@ class _OnboardingScreen extends State<Onboarding> {
                 ),
                 _currentPage != _numPages - 1
                     ? Expanded(
-                      child:Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children:[ 
-                          Align(
-                          alignment: FractionalOffset.bottomRight,
-                          child: TextButton(
-                            onPressed: () {
-                              _pageController.previousPage(
-                                duration: Duration(milliseconds: 500),
-                                curve: Curves.ease,
-                              );
-                            },
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              mainAxisSize: MainAxisSize.min,
-                              children: <Widget>[
-                                SizedBox(width: 10.0),
-                                Icon(
-                                  Icons.arrow_back,
-                                  color: Colors.white,
-                                  size: 30.0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Align(
+                              alignment: FractionalOffset.bottomRight,
+                              child: TextButton(
+                                onPressed: () {
+                                  _pageController.previousPage(
+                                    duration: Duration(milliseconds: 500),
+                                    curve: Curves.ease,
+                                  );
+                                },
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: <Widget>[
+                                    SizedBox(width: 10.0),
+                                    Icon(
+                                      Icons.arrow_back,
+                                      color: Colors.white,
+                                      size: 30.0,
+                                    ),
+                                    Text(
+                                      'Prev',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 22.0,
+                                        fontFamily: 'Poppins,'
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                                Text(
-                                  'Prev',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 22.0,
-                                  ),
-                                ),
-                              ],
+                              ),
                             ),
-                          ),
-                        ),
-                        Align(
-                          alignment: FractionalOffset.bottomLeft,
-                          child: TextButton(
-                            onPressed: () {
-                              _pageController.nextPage(
-                                duration: Duration(milliseconds: 500),
-                                curve: Curves.ease,
-                              );
-                            },
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              mainAxisSize: MainAxisSize.min,
-                              children: <Widget>[
-                                Text(
-                                  'Next',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 22.0,
-                                  ),
+                            Align(
+                              alignment: FractionalOffset.bottomLeft,
+                              child: TextButton(
+                                onPressed: () {
+                                  _pageController.nextPage(
+                                    duration: Duration(milliseconds: 500),
+                                    curve: Curves.ease,
+                                  );
+                                },
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: <Widget>[
+                                    Text(
+                                      'Next',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 22.0,
+                                        fontFamily: 'Poppins',
+                                      ),
+                                    ),
+                                    SizedBox(width: 10.0),
+                                    Icon(
+                                      Icons.arrow_forward,
+                                      color: Colors.white,
+                                      size: 30.0,
+                                    ),
+                                  ],
                                 ),
-                                SizedBox(width: 10.0),
-                                Icon(
-                                  Icons.arrow_forward,
-                                  color: Colors.white,
-                                  size: 30.0,
-                                ),
-                              ],
+                              ),
                             ),
-                          ),
+                          ],
                         ),
-                        ],
-                      ),
                       )
                     : Text(''),
               ],
@@ -278,13 +301,13 @@ class _OnboardingScreen extends State<Onboarding> {
           ? Container(
               height: 100.0,
               width: double.infinity,
-              color: Colors.white,
+              color: style.Colors.thirdColor,
               child: GestureDetector(
-               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => HomeScreen()),
-                );
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomeScreen()),
+                  );
                 },
                 child: Center(
                   child: Padding(
@@ -292,7 +315,7 @@ class _OnboardingScreen extends State<Onboarding> {
                     child: Text(
                       'Get started',
                       style: TextStyle(
-                        color: Color(0xFF5B16D0),
+                        color: Colors.white,
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,
                       ),
