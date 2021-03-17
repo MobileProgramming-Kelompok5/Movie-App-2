@@ -16,6 +16,11 @@ Future<void> main() async {
   runApp(MyApp());
 }
 
+// void main() {
+//   runApp(MyApp());
+//   Paint.enableDithering = true;
+// }
+
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -34,6 +39,8 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
+      // home: Onboarding(),
+
       initialRoute: seen == false ? "/onboarding" : "/home",
       routes: {
         '/home': (context) => HomeScreen(),
