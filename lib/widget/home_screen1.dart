@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app_3/widget/now_playing.dart';
 import 'package:movie_app_3/widget/top_movie.dart';
+import 'package:sliding_sheet/sliding_sheet.dart';
 
 class FirstTab extends StatefulWidget {
   @override
@@ -23,10 +24,26 @@ class _FirstTabState extends State<FirstTab> {
             ],
           ),
         ),
-        child: ListView(
+        child: Stack(
           children: <Widget>[
             FirstContainer(),
-            TopMovies(),
+            SlidingSheet(
+              elevation: 5,
+              cornerRadius: 30,
+              snapSpec: const SnapSpec(
+                snap: true,
+                snappings: [0.6, 1.0],
+              ),
+              builder: (context, state) {
+                return Container(
+                  height: MediaQuery.of(context).size.height -
+                      MediaQuery.of(context).size.height * 0.2,
+                  child: Center(
+                    child: TopMovies(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),

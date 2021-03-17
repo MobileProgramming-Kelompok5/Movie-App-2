@@ -23,18 +23,18 @@ class _TopMoviesState extends State<TopMovies> {
         Padding(
           padding: const EdgeInsets.only(left: 15.0, top: 20.0),
           child: Text(
-            "TOP MOVIES",
+            "Suggested for you",
             style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontWeight: FontWeight.w500,
                 fontFamily: 'Poppins',
-                fontSize: 14.0),
+                fontSize: 16.0),
           ),
         ),
         Divider(
-          color: Colors.white,
-          indent: 16,
-          endIndent: MediaQuery.of(context).size.width * 0.84,
+          color: Colors.black,
+          indent: 30,
+          endIndent: MediaQuery.of(context).size.width * 0.68,
           thickness: 1,
         ),
         SizedBox(
@@ -109,7 +109,7 @@ class _TopMoviesState extends State<TopMovies> {
       );
     } else
       return Container(
-        height: MediaQuery.of(context).size.height * 0.37 - 5,
+        height: MediaQuery.of(context).size.height * 0.715,
         padding: EdgeInsets.only(left: 10.0),
         child: ListView.builder(
           scrollDirection: Axis.vertical,
@@ -121,7 +121,7 @@ class _TopMoviesState extends State<TopMovies> {
                 onTap: () {},
                 child: Card(
                   shape: RoundedRectangleBorder(
-                    side: BorderSide(color: Colors.white70, width: 1),
+                    side: BorderSide(color: Colors.black, width: 1),
                     borderRadius: BorderRadius.all(Radius.circular(20.0)),
                   ),
                   child: Row(
@@ -193,79 +193,9 @@ class _TopMoviesState extends State<TopMovies> {
                             SizedBox(
                               height: 20,
                             ),
-                            // RatingBar(
-                            //   itemSize: 8.0,
-                            //   initialRating: movies[index].rating / 2,
-                            //   minRating: 1,
-                            //   direction: Axis.horizontal,
-                            //   allowHalfRating: true,
-                            //   itemCount: 5,
-                            //   itemPadding: EdgeInsets.symmetric(horizontal: 2.0),
-                            //   itemBuilder: (context, _) => Icon(
-                            //     EvaIcons.star,
-                            //     color: Style.Colors.secondColor,
-                            //   ),
-                            //   onRatingUpdate: (rating) {
-                            //     print(rating);
-                            //   },
-                            // )
                           ],
                         ),
                       )
-                      // Column(
-                      //   children: [
-                      //     SizedBox(
-                      //       height: 10.0,
-                      //       width: 200,
-                      //     ),
-                      //     Container(
-                      //       width: 100,
-                      //       child: Text(
-                      //         movies[index].title,
-                      //         maxLines: 2,
-                      //         style: TextStyle(
-                      //             height: 1.4,
-                      //             color: Style.Colors.titleColor,
-                      //             fontWeight: FontWeight.bold,
-                      //             fontSize: 15.0),
-                      //       ),
-                      //     ),
-                      //     SizedBox(
-                      //       height: 5.0,
-                      //     ),
-                      //     Row(
-                      //       crossAxisAlignment: CrossAxisAlignment.center,
-                      //       children: [
-                      //         Text(
-                      //           movies[index].rating.toString(),
-                      //           style: TextStyle(
-                      //               color: Style.Colors.titleColor,
-                      //               fontSize: 14.0,
-                      //               fontWeight: FontWeight.bold),
-                      //         ),
-                      //         SizedBox(
-                      //           width: 5.0,
-                      //         ),
-                      //         // RatingBar(
-                      //         //   itemSize: 8.0,
-                      //         //   initialRating: movies[index].rating / 2,
-                      //         //   minRating: 1,
-                      //         //   direction: Axis.horizontal,
-                      //         //   allowHalfRating: true,
-                      //         //   itemCount: 5,
-                      //         //   itemPadding: EdgeInsets.symmetric(horizontal: 2.0),
-                      //         //   itemBuilder: (context, _) => Icon(
-                      //         //     EvaIcons.star,
-                      //         //     color: Style.Colors.secondColor,
-                      //         //   ),
-                      //         //   onRatingUpdate: (rating) {
-                      //         //     print(rating);
-                      //         //   },
-                      //         // )
-                      //       ],
-                      //     ),
-                      //   ],
-                      // )
                     ],
                   ),
                 ),

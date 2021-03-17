@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app_3/widget/drawer.dart';
-import 'package:movie_app_3/widget/genres_list.dart';
 import 'package:movie_app_3/widget/home_screen1.dart';
 import 'package:movie_app_3/widget/home_screen2.dart';
 

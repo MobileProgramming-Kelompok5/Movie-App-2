@@ -89,7 +89,7 @@ class _FirstContainerState extends State<FirstContainer> {
       );
     } else
       return Container(
-        height: MediaQuery.of(context).size.height * 0.4,
+        height: MediaQuery.of(context).size.height * 0.3,
         child: PageIndicatorContainer(
           align: IndicatorAlign.bottom,
           length: movies.take(5).length,
