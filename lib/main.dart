@@ -1,7 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app_3/screens/home_screen.dart';
 import 'package:movie_app_3/widget/onboard.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() => runApp(MyApp());
+bool seen;
+//Onboard 1 time
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+
+  seen = prefs.getBool("seen") ?? false;
+  print(seen.toString());
+  await prefs.setBool("seen", true);
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -21,7 +34,11 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: Onboarding(),
+      initialRoute: seen == false ? "/onboarding" : "/home",
+      routes: {
+        '/home': (context) => HomeScreen(),
+        "/onboarding": (context) => Onboarding(),
+      },
     );
   }
 }

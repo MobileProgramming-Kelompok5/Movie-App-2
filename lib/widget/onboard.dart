@@ -202,8 +202,41 @@ class _OnboardingScreen extends State<Onboarding> {
                 ),
                 _currentPage != _numPages - 1
                     ? Expanded(
-                        child: Align(
+                      child:Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children:[ 
+                          Align(
                           alignment: FractionalOffset.bottomRight,
+                          child: TextButton(
+                            onPressed: () {
+                              _pageController.previousPage(
+                                duration: Duration(milliseconds: 500),
+                                curve: Curves.ease,
+                              );
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                SizedBox(width: 10.0),
+                                Icon(
+                                  Icons.arrow_back,
+                                  color: Colors.white,
+                                  size: 30.0,
+                                ),
+                                Text(
+                                  'Prev',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 22.0,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: FractionalOffset.bottomLeft,
                           child: TextButton(
                             onPressed: () {
                               _pageController.nextPage(
@@ -232,6 +265,8 @@ class _OnboardingScreen extends State<Onboarding> {
                             ),
                           ),
                         ),
+                        ],
+                      ),
                       )
                     : Text(''),
               ],
