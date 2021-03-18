@@ -94,7 +94,7 @@ class _HomeScreenState extends State<HomeScreen>
               //   style: Theme.of(context).textTheme.bodyText1,
               // ),
               FirstTab(),
-              GenresScreen(),
+              SecondTab(),
               // Text(
               //   'first',
               //   style: Theme.of(context).textTheme.bodyText1,

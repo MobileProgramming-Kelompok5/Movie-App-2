@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_app_3/bloc/get_movies_bloc.dart';
 import 'package:movie_app_3/model/movie.dart';
 import 'package:movie_app_3/model/movie_response.dart';
+import 'package:movie_app_3/screens/movie_detail_screen.dart';
 import 'package:movie_app_3/style/theme.dart' as Style;
 
 class TopMovies extends StatefulWidget {
@@ -127,7 +128,15 @@ class _TopMoviesState extends State<TopMovies> {
             return Padding(
               padding: EdgeInsets.only(top: 10.0, bottom: 10.0, right: 15.0),
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          MovieDetailScreen(movie: movies[index]),
+                    ),
+                  );
+                },
                 child: Card(
                   shape: RoundedRectangleBorder(
                     side: BorderSide(color: Colors.black, width: 1),

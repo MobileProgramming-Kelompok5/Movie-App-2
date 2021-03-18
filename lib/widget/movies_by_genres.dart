@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:movie_app_3/bloc/get_movies_byGenre_bloc.dart';
 import 'package:movie_app_3/model/movie.dart';
 import 'package:movie_app_3/model/movie_response.dart';
+import 'package:movie_app_3/screens/movie_detail_screen.dart';
 // import 'package:movie_app_3/screens/detail_screen.dart';
 import 'package:movie_app_3/widget/movie_card.dart';
 
@@ -137,8 +138,19 @@ class _GenreMoviesState extends State<GenreMovies> {
           opacity: initialPage == index ? 1 : 0.4,
           child: Transform.rotate(
             angle: math.pi * value,
-            child: MovieCard(
-              movies: movies[index],
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        MovieDetailScreen(movie: movies[index]),
+                  ),
+                );
+              },
+              child: MovieCard(
+                movies: movies[index],
+              ),
             ),
           ),
         );
