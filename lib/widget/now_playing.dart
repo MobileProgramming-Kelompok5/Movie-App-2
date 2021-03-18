@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:movie_app_3/bloc/get_now_playing_bloc.dart';
 import 'package:movie_app_3/model/movie.dart';
 import 'package:movie_app_3/model/movie_response.dart';
+import 'package:movie_app_3/screens/movie_detail_screen.dart';
 import 'package:page_indicator/page_indicator.dart';
 import 'package:movie_app_3/style/theme.dart' as Style;
 
@@ -104,7 +105,15 @@ class _FirstContainerState extends State<FirstContainer> {
             itemCount: movies.take(5).length,
             itemBuilder: (context, index) {
               return GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          MovieDetailScreen(movie: movies[index]),
+                    ),
+                  );
+                },
                 child: Stack(
                   children: <Widget>[
                     Hero(
@@ -139,16 +148,6 @@ class _FirstContainerState extends State<FirstContainer> {
                             ]),
                       ),
                     ),
-                    Positioned(
-                        bottom: 0.0,
-                        top: 0.0,
-                        left: 0.0,
-                        right: 0.0,
-                        child: Icon(
-                          FontAwesomeIcons.playCircle,
-                          color: Style.Colors.secondColor,
-                          size: 40.0,
-                        )),
                     Positioned(
                         bottom: 30.0,
                         child: Container(
