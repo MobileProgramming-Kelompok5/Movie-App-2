@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app_3/widget/drawer.dart';
-import 'package:movie_app_3/widget/home_screen1.dart';
-import 'package:movie_app_3/widget/home_screen2.dart';
+import 'package:movie_app_3/screens/home_screen/widget/home_screen1.dart';
+import 'package:movie_app_3/screens/home_screen/widget/home_screen2.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -70,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen>
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
                   child: Text(
-                    'Top Movies',
+                    'Discover',
                     style: TextStyle(fontSize: 16, fontFamily: 'Raleway'),
                   ),
                 ),
@@ -88,17 +88,8 @@ class _HomeScreenState extends State<HomeScreen>
           body: TabBarView(
             controller: _tabController,
             children: <Widget>[
-              // Popular(),
-              // Text(
-              //   'first',
-              //   style: Theme.of(context).textTheme.bodyText1,
-              // ),
               FirstTab(),
               SecondTab(),
-              // Text(
-              //   'first',
-              //   style: Theme.of(context).textTheme.bodyText1,
-              // ),
             ],
           ),
         ),

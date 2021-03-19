@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:movie_app_3/bloc/get_now_playing_bloc.dart';
 import 'package:movie_app_3/model/movie.dart';
 import 'package:movie_app_3/model/movie_response.dart';
-import 'package:movie_app_3/screens/movie_detail_screen.dart';
+import 'package:movie_app_3/screens/movie_detail_screen/movie_detail_screen.dart';
 import 'package:page_indicator/page_indicator.dart';
 import 'package:movie_app_3/style/theme.dart' as Style;
 

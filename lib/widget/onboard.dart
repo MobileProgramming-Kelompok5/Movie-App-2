@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:movie_app_3/screens/home_screen.dart';
+import 'package:movie_app_3/screens/home_screen/home_screen.dart';
 import '../style/theme.dart' as style;
 
 class Onboarding extends StatefulWidget {
@@ -248,10 +248,9 @@ class _OnboardingScreen extends State<Onboarding> {
                                     Text(
                                       'Prev',
                                       style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 22.0,
-                                        fontFamily: 'Poppins,'
-                                      ),
+                                          color: Colors.white,
+                                          fontSize: 22.0,
+                                          fontFamily: 'Poppins,'),
                                     ),
                                   ],
                                 ),

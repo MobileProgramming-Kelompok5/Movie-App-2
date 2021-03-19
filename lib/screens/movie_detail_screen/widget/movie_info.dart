@@ -128,6 +128,11 @@ class _MovieInfoState extends State<MovieInfo> {
                     fontWeight: FontWeight.w500,
                     fontSize: 20.0),
               ),
+              Divider(
+                color: Colors.white,
+                endIndent: MediaQuery.of(context).size.width * 0.83,
+                thickness: 1,
+              ),
               SizedBox(
                 height: 10.0,
               ),

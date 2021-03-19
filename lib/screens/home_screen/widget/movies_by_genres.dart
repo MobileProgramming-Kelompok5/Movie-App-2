@@ -3,9 +3,9 @@ import 'dart:math' as math;
 import 'package:movie_app_3/bloc/get_movies_byGenre_bloc.dart';
 import 'package:movie_app_3/model/movie.dart';
 import 'package:movie_app_3/model/movie_response.dart';
-import 'package:movie_app_3/screens/movie_detail_screen.dart';
+import 'package:movie_app_3/screens/movie_detail_screen/movie_detail_screen.dart';
 // import 'package:movie_app_3/screens/detail_screen.dart';
-import 'package:movie_app_3/widget/movie_card.dart';
+import 'package:movie_app_3/screens/home_screen/widget/movie_card.dart';
 
 class GenreMovies extends StatefulWidget {
   final int genreId;
@@ -135,7 +135,7 @@ class _GenreMoviesState extends State<GenreMovies> {
         }
         return AnimatedOpacity(
           duration: Duration(milliseconds: 350),
-          opacity: initialPage == index ? 1 : 0.4,
+          opacity: initialPage == index ? 1 : 0.5,
           child: Transform.rotate(
             angle: math.pi * value,
             child: GestureDetector(

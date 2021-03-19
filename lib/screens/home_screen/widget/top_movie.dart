@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_app_3/bloc/get_movies_bloc.dart';
 import 'package:movie_app_3/model/movie.dart';
 import 'package:movie_app_3/model/movie_response.dart';
-import 'package:movie_app_3/screens/movie_detail_screen.dart';
+import 'package:movie_app_3/screens/movie_detail_screen/movie_detail_screen.dart';
 import 'package:movie_app_3/style/theme.dart' as Style;
 
 class TopMovies extends StatefulWidget {
@@ -31,20 +31,20 @@ class _TopMoviesState extends State<TopMovies> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 15.0, top: 15.0),
+          padding: const EdgeInsets.only(left: 20.0, top: 10.0),
           child: Text(
-            "Suggested for you",
+            "Top Movies",
             style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.w500,
                 fontFamily: 'Poppins',
-                fontSize: 16.0),
+                fontSize: 17.0),
           ),
         ),
         Divider(
           color: Colors.black,
-          indent: 30,
-          endIndent: MediaQuery.of(context).size.width * 0.68,
+          indent: 22,
+          endIndent: MediaQuery.of(context).size.width * 0.8,
           thickness: 1,
         ),
         SizedBox(

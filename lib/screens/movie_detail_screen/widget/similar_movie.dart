@@ -4,7 +4,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:movie_app_3/bloc/get_movie_similar_bloc.dart';
 import 'package:movie_app_3/model/movie.dart';
 import 'package:movie_app_3/model/movie_response.dart';
-import 'package:movie_app_3/screens/movie_detail_screen.dart';
+import 'package:movie_app_3/screens/movie_detail_screen/movie_detail_screen.dart';
 import 'package:movie_app_3/style/theme.dart' as Style;
 
 class SimilarMovies extends StatefulWidget {
@@ -46,6 +46,12 @@ class _SimilarMoviesState extends State<SimilarMovies> {
             ),
           ),
         ),
+        Divider(
+          color: Colors.white,
+          indent: 25,
+          endIndent: MediaQuery.of(context).size.width * 0.7,
+          thickness: 1,
+        ),
         SizedBox(
           height: 5.0,
         ),
@@ -71,18 +77,21 @@ class _SimilarMoviesState extends State<SimilarMovies> {
 
   Widget _buildLoadingWidget() {
     return Center(
-        child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        SizedBox(
-          height: 25.0,
-          width: 25.0,
-          child: CircularProgressIndicator(
-            valueColor: new AlwaysStoppedAnimation<Color>(Colors.white),
-            strokeWidth: 4.0,
-          ),
-        )
-      ],
+        child: Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(
+            height: 25.0,
+            width: 25.0,
+            child: CircularProgressIndicator(
+              valueColor: new AlwaysStoppedAnimation<Color>(Colors.white),
+              strokeWidth: 4.0,
+            ),
+          )
+        ],
+      ),
     ));
   }
 

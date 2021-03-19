@@ -80,8 +80,7 @@ class MyDrawer extends StatelessWidget {
                           builder: (BuildContext context) {
                             return CustomDialogBox(
                               title: "Moviez",
-                              descriptions:
-                                  "This App is for educational purposes only",
+                              descriptions: "This App is made by Kelompok 5",
                               text: "Ok",
                             );
                           },
