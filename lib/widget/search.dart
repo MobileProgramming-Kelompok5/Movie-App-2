@@ -70,9 +70,15 @@ class DataSearch extends SearchDelegate {
               placeholder: AssetImage('assets/images/no-image.jpg'),
               width: 50.0,
               fit: BoxFit.contain),
-          title: Text(movies[index].title),
-          subtitle:
-              Text(movies[index].overview, overflow: TextOverflow.ellipsis),
+          title: Text(
+            movies[index].title,
+            style: TextStyle(fontFamily: 'Poppins'),
+          ),
+          subtitle: Text(
+            movies[index].overview,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(fontFamily: 'Raleway'),
+          ),
           onTap: () {
             Navigator.push(
               context,
