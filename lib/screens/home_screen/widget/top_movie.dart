@@ -198,8 +198,9 @@ class _TopMoviesState extends State<TopMovies> {
                             ),
                             Text(
                               movies[index].overview,
+                              overflow: TextOverflow.fade,
                               textAlign: TextAlign.justify,
-                              maxLines: 2,
+                              maxLines: 3,
                               style: TextStyle(
                                   height: 1.4,
                                   color: Style.Colors.titleColor,
@@ -207,7 +208,6 @@ class _TopMoviesState extends State<TopMovies> {
                                   fontFamily: 'Raleway',
                                   fontSize: 11.0),
                             ),
-                            Text("..."),
                             SizedBox(
                               height: 20,
                             ),

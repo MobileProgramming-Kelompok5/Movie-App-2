@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_app_3/widget/drawer.dart';
 import 'package:movie_app_3/screens/home_screen/widget/home_screen1.dart';
 import 'package:movie_app_3/screens/home_screen/widget/home_screen2.dart';
+import 'package:movie_app_3/widget/search.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -56,8 +57,11 @@ class _HomeScreenState extends State<HomeScreen>
             actions: [
               Padding(
                 padding: EdgeInsets.only(right: 20),
-                child: Icon(
-                  Icons.search,
+                child: IconButton(
+                  icon: Icon(Icons.search),
+                  onPressed: () {
+                    showSearch(context: context, delegate: DataSearch());
+                  },
                 ),
               ),
             ],
