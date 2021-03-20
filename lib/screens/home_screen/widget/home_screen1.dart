@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:sliding_sheet/sliding_sheet.dart';
+
 import 'package:movie_app_3/screens/home_screen/widget/now_playing.dart';
 import 'package:movie_app_3/screens/home_screen/widget/top_movie.dart';
-import 'package:sliding_sheet/sliding_sheet.dart';
 import 'package:movie_app_3/style/theme.dart' as Style;
 
 class FirstTab extends StatefulWidget {
@@ -27,7 +28,7 @@ class _FirstTabState extends State<FirstTab> {
         ),
         child: Stack(
           children: <Widget>[
-            FirstContainer(),
+            NowPlaying(),
             SlidingSheet(
               backdropColor: Style.Colors.thirdColor.withOpacity(0.8),
               elevation: 5,

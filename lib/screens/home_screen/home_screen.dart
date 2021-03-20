@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:movie_app_3/widget/drawer.dart';
 import 'package:movie_app_3/screens/home_screen/widget/home_screen1.dart';
 import 'package:movie_app_3/screens/home_screen/widget/home_screen2.dart';

@@ -1,24 +1,18 @@
-import 'dart:io';
 import 'dart:ui';
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:sliver_fab/sliver_fab.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+
 import 'package:movie_app_3/bloc/get_movie_videos_bloc.dart';
 import 'package:movie_app_3/model/movie.dart';
 import 'package:movie_app_3/model/video.dart';
 import 'package:movie_app_3/model/video_response.dart';
 import 'package:movie_app_3/screens/trailer_player_screen/trailer_player.dart';
-import 'package:movie_app_3/style/theme.dart' as Style;
 import 'package:movie_app_3/screens/movie_detail_screen/widget/cast_movie.dart';
 import 'package:movie_app_3/screens/movie_detail_screen/widget/movie_info.dart';
 import 'package:movie_app_3/screens/movie_detail_screen/widget/similar_movie.dart';
-// import 'package:movie_app_3/widgets/casts.dart';
-// import 'package:movie_app_3/widgets/movie_info.dart';
-// import 'package:movie_app_3/widgets/similar_movies.dart';
-import 'package:sliver_fab/sliver_fab.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-
-// import 'video_player.dart';
+import 'package:movie_app_3/style/theme.dart' as Style;
 
 class MovieDetailScreen extends StatefulWidget {
   final Movie movie;
@@ -85,23 +79,31 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
               expandedHeight: 90.0,
               slivers: <Widget>[
                 new SliverAppBar(
-                  backgroundColor: Style.Colors.mainColor,
+                  backgroundColor: Style.Colors.firstColor,
                   expandedHeight: 200.0,
                   pinned: true,
                   flexibleSpace: new FlexibleSpaceBar(
                       // titlePadding: EdgeInsets.only(bottom: 15, left: 50),
                       centerTitle: true,
                       title: Text(
-                        movie.title.length > 40
-                            ? movie.title.substring(0, 37) + "..."
-                            : movie.title,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 17,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'Poppins',
-                        ),
-                      ),
+                          movie.title.length > 40
+                              ? movie.title.substring(0, 30) + "..."
+                              : movie.title,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: movie.title.length < 20
+                              ? TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Poppins',
+                                )
+                              : TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Poppins',
+                                )),
                       background: Stack(
                         children: <Widget>[
                           Container(
@@ -144,6 +146,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                         Padding(
                           padding: const EdgeInsets.only(top: 20.0),
                           child: Chip(
+                            backgroundColor: Style.Colors.secondColor,
                             padding: EdgeInsets.symmetric(horizontal: 10),
                             label: Text(
                               "Rating:  ${movie.rating.toString()}",

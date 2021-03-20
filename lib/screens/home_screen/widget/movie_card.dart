@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:movie_app_3/model/movie.dart';
+import 'package:movie_app_3/style/theme.dart' as Style;
 
 class MovieCard extends StatelessWidget {
   const MovieCard({
@@ -42,6 +44,7 @@ class MovieCard extends StatelessWidget {
                 ),
               ),
               Chip(
+                backgroundColor: Style.Colors.secondColor,
                 label: Text(
                   'Rating: ' + movies.rating.toString(),
                   style: TextStyle(

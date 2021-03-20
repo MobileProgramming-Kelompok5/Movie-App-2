@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
+
 import 'package:movie_app_3/bloc/get_movies_byGenre_bloc.dart';
 import 'package:movie_app_3/model/genre.dart';
 import 'package:movie_app_3/screens/home_screen/widget/movies_by_genres.dart';
-// import 'package:movieapp/bloc/get_movies_byGenre_bloc.dart';
-// import 'package:movieapp/model/genre.dart';
 import 'package:movie_app_3/style/theme.dart' as Style;
-
-// import 'movies_by_genre.dart';
 
 class GenresList extends StatefulWidget {
   final List<Genre> genres;
@@ -44,31 +41,7 @@ class _GenresListState extends State<GenresList>
         child: DefaultTabController(
           length: genres.length,
           child: Scaffold(
-            backgroundColor: Style.Colors.mainColor,
-            // appBar: PreferredSize(
-            //   preferredSize: Size.fromHeight(50.0),
-            //   child: AppBar(
-            //     backgroundColor: Style.Colors.mainColor,
-            //     bottom: TabBar(
-            //       controller: _tabController,
-            //       indicatorColor: Style.Colors.secondColor,
-            //       indicatorSize: TabBarIndicatorSize.tab,
-            //       indicatorWeight: 3.0,
-            //       unselectedLabelColor: Style.Colors.titleColor,
-            //       labelColor: Colors.white,
-            //       isScrollable: true,
-            //       tabs: genres.map((Genre genre) {
-            //         return Container(
-            //             padding: EdgeInsets.only(bottom: 15.0, top: 10.0),
-            //             child: new Text(genre.name.toUpperCase(),
-            //                 style: TextStyle(
-            //                   fontSize: 14.0,
-            //                   fontWeight: FontWeight.bold,
-            //                 )));
-            //       }).toList(),
-            //     ),
-            //   ),
-            // ),
+            backgroundColor: Style.Colors.firstColor,
             body: Container(
                 decoration: BoxDecoration(
                     image: DecorationImage(
@@ -84,13 +57,12 @@ class _GenresListState extends State<GenresList>
                   }).toList(),
                 )),
             bottomNavigationBar: Container(
-              padding: EdgeInsets.symmetric(vertical: 5),
               child: TabBar(
                 controller: _tabController,
                 indicatorColor: Style.Colors.secondColor,
                 indicatorSize: TabBarIndicatorSize.tab,
                 indicatorWeight: 3.0,
-                unselectedLabelColor: Style.Colors.titleColor,
+                unselectedLabelColor: Style.Colors.subtitleColor,
                 labelColor: Colors.white,
                 isScrollable: true,
                 tabs: genres.map((Genre genre) {
@@ -101,6 +73,7 @@ class _GenresListState extends State<GenresList>
                             style: TextStyle(
                               fontSize: 13.0,
                               fontWeight: FontWeight.bold,
+                              fontFamily: 'Poppins',
                             )),
                       ));
                 }).toList(),

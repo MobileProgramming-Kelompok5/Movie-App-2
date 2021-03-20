@@ -1,17 +1,9 @@
-import 'dart:convert';
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:movie_app_3/bloc/get_casts_bloc.dart';
-import 'package:movie_app_3/bloc/get_movies_bloc.dart';
-import 'package:movie_app_3/bloc/get_persons_bloc.dart';
 import 'package:movie_app_3/model/cast.dart';
 import 'package:movie_app_3/model/cast_response.dart';
-import 'package:movie_app_3/model/movie.dart';
-import 'package:movie_app_3/model/movie_response.dart';
-import 'package:movie_app_3/model/person.dart';
-import 'package:movie_app_3/model/person_response.dart';
 import 'package:movie_app_3/style/theme.dart' as Style;
 
 class Casts extends StatefulWidget {
@@ -136,99 +128,78 @@ class _CastsState extends State<Casts> {
       return Container(
         height: 190.0,
         padding: EdgeInsets.only(left: 10.0),
-        child: ShaderMask(
-          shaderCallback: (Rect rect) {
-            return LinearGradient(
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-              colors: [
-                Style.Colors.thirdColor,
-                Colors.transparent,
-                Colors.transparent,
-                Style.Colors.thirdColor,
-              ],
-              stops: [
-                0.0,
-                0.1,
-                0.9,
-                1.0,
-              ], // 10% purple, 80% transparent, 10% purple
-            ).createShader(rect);
-          },
-          blendMode: BlendMode.dstOut,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: casts.length,
-            itemBuilder: (context, index) {
-              return Container(
-                padding: EdgeInsets.only(top: 10.0, right: 8.0),
-                width: 120.0,
-                child: GestureDetector(
-                  onTap: () {},
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      casts[index].img == null
-                          ? Hero(
-                              tag: casts[index].id,
-                              child: Container(
-                                width: 70.0,
-                                height: 70.0,
-                                decoration: new BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Colors.white.withOpacity(0.6)),
-                                child: Icon(
-                                  FontAwesomeIcons.userAlt,
-                                  color: Colors.white,
-                                ),
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: casts.length,
+          itemBuilder: (context, index) {
+            return Container(
+              padding: EdgeInsets.only(top: 10.0, right: 8.0),
+              width: 120.0,
+              child: GestureDetector(
+                onTap: () {},
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    casts[index].img == null
+                        ? Hero(
+                            tag: casts[index].id,
+                            child: Container(
+                              width: 70.0,
+                              height: 70.0,
+                              decoration: new BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.white.withOpacity(0.6)),
+                              child: Icon(
+                                FontAwesomeIcons.userAlt,
+                                color: Colors.white,
                               ),
-                            )
-                          : Hero(
-                              tag: casts[index].id,
-                              child: Container(
-                                  width: 100.0,
-                                  height: 100.0,
-                                  decoration: new BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    image: new DecorationImage(
-                                        fit: BoxFit.cover,
-                                        image: NetworkImage(
-                                            "https://image.tmdb.org/t/p/w300/" +
-                                                casts[index].img)),
-                                  )),
                             ),
-                      SizedBox(
-                        height: 10.0,
-                      ),
-                      Text(
-                        casts[index].name,
-                        maxLines: 2,
-                        style: TextStyle(
-                            height: 1.4,
-                            color: Colors.white,
-                            fontFamily: 'Poppins',
-                            fontSize: 12.0),
-                      ),
-                      SizedBox(
-                        height: 3.0,
-                      ),
-                      Text(
-                        casts[index].character,
-                        maxLines: 2,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            height: 1.4,
-                            color: Style.Colors.titleColor,
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.bold,
-                            fontSize: 11.0),
-                      ),
-                    ],
-                  ),
+                          )
+                        : Hero(
+                            tag: casts[index].id,
+                            child: Container(
+                                width: 100.0,
+                                height: 100.0,
+                                decoration: new BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  image: new DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: NetworkImage(
+                                          "https://image.tmdb.org/t/p/w300/" +
+                                              casts[index].img)),
+                                )),
+                          ),
+                    SizedBox(
+                      height: 10.0,
+                    ),
+                    Text(
+                      casts[index].name,
+                      maxLines: 2,
+                      style: TextStyle(
+                          height: 1.4,
+                          color: Colors.white,
+                          fontFamily: 'Poppins',
+                          fontSize: 12.0),
+                    ),
+                    SizedBox(
+                      height: 3.0,
+                    ),
+                    Text(
+                      casts[index].character,
+                      maxLines: 2,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          height: 1.4,
+                          color: Style.Colors.subtitleColor,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.bold,
+                          fontSize: 11.0),
+                    ),
+                  ],
                 ),
-              );
-            },
-          ),
+              ),
+            );
+          },
         ),
       );
   }

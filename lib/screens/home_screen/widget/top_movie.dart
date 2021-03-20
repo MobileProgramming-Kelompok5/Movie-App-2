@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:movie_app_3/bloc/get_movies_bloc.dart';
 import 'package:movie_app_3/model/movie.dart';
 import 'package:movie_app_3/model/movie_response.dart';
@@ -179,7 +180,7 @@ class _TopMoviesState extends State<TopMovies> {
                               maxLines: 3,
                               style: TextStyle(
                                   height: 1.4,
-                                  color: Style.Colors.titleColor,
+                                  color: Style.Colors.subtitleColor,
                                   fontWeight: FontWeight.bold,
                                   fontFamily: 'Poppins',
                                   fontSize: 15.0),
@@ -188,6 +189,7 @@ class _TopMoviesState extends State<TopMovies> {
                               height: 10,
                             ),
                             Chip(
+                              backgroundColor: Style.Colors.secondColor,
                               label: Text(
                                 'Rating: ' + movies[index].rating.toString(),
                                 style: TextStyle(fontFamily: 'Raleway'),
@@ -203,7 +205,7 @@ class _TopMoviesState extends State<TopMovies> {
                               maxLines: 3,
                               style: TextStyle(
                                   height: 1.4,
-                                  color: Style.Colors.titleColor,
+                                  color: Style.Colors.subtitleColor,
                                   fontWeight: FontWeight.bold,
                                   fontFamily: 'Raleway',
                                   fontSize: 11.0),

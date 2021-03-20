@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:movie_app_3/bloc/get_now_playing_bloc.dart';
 import 'package:movie_app_3/model/movie.dart';
 import 'package:movie_app_3/model/movie_response.dart';
@@ -7,12 +7,12 @@ import 'package:movie_app_3/screens/movie_detail_screen/movie_detail_screen.dart
 import 'package:page_indicator/page_indicator.dart';
 import 'package:movie_app_3/style/theme.dart' as Style;
 
-class FirstContainer extends StatefulWidget {
+class NowPlaying extends StatefulWidget {
   @override
-  _FirstContainerState createState() => _FirstContainerState();
+  _NowPlayingState createState() => _NowPlayingState();
 }
 
-class _FirstContainerState extends State<FirstContainer> {
+class _NowPlayingState extends State<NowPlaying> {
   PageController pageController =
       PageController(viewportFraction: 1, keepPage: true);
 
@@ -96,7 +96,7 @@ class _FirstContainerState extends State<FirstContainer> {
           length: movies.take(5).length,
           indicatorSpace: 8.0,
           padding: const EdgeInsets.all(5.0),
-          indicatorColor: Style.Colors.titleColor,
+          indicatorColor: Style.Colors.subtitleColor,
           indicatorSelectorColor: Style.Colors.secondColor,
           shape: IndicatorShape.circle(size: 5.0),
           pageView: PageView.builder(
@@ -143,8 +143,8 @@ class _FirstContainerState extends State<FirstContainer> {
                               0.9
                             ],
                             colors: [
-                              Style.Colors.mainColor.withOpacity(1.0),
-                              Style.Colors.mainColor.withOpacity(0.0)
+                              Style.Colors.firstColor.withOpacity(1.0),
+                              Style.Colors.firstColor.withOpacity(0.0)
                             ]),
                       ),
                     ),

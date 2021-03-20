@@ -1,6 +1,5 @@
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+
 import 'package:movie_app_3/bloc/get_movie_similar_bloc.dart';
 import 'package:movie_app_3/model/movie.dart';
 import 'package:movie_app_3/model/movie_response.dart';
@@ -189,6 +188,7 @@ class _SimilarMoviesState extends State<SimilarMovies> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         Chip(
+                          backgroundColor: Style.Colors.secondColor,
                           label: Text(
                             "Rating:  ${movies[index].rating.toString()}",
                             style: TextStyle(
@@ -200,22 +200,6 @@ class _SimilarMoviesState extends State<SimilarMovies> {
                         SizedBox(
                           width: 5.0,
                         ),
-//                         RatingBar(
-//                       itemSize: 8.0,
-//    initialRating: movies[index].rating / 2,
-//    minRating: 1,
-//    direction: Axis.horizontal,
-//    allowHalfRating: true,
-//    itemCount: 5,
-//    itemPadding: EdgeInsets.symmetric(horizontal: 2.0),
-//    itemBuilder: (context, _) => Icon(
-//      EvaIcons.star,
-//      color: Style.Colors.secondColor,
-//    ),
-//    onRatingUpdate: (rating) {
-//      print(rating);
-//    },
-// )
                       ],
                     )
                   ],

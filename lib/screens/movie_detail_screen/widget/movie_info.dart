@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:movie_app_3/bloc/get_movie_detail_bloc.dart';
 import 'package:movie_app_3/model/movie_detail.dart';
 import 'package:movie_app_3/model/movie_detail_response.dart';

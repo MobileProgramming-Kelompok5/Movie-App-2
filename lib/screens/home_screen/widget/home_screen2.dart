@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:movie_app_3/bloc/get_genres_bloc.dart';
 import 'package:movie_app_3/model/genre.dart';
 import 'package:movie_app_3/model/genre_response.dart';
