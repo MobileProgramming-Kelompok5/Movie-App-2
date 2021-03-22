@@ -62,8 +62,10 @@ class DataSearch extends SearchDelegate {
       itemBuilder: (context, index) {
         return ListTile(
           leading: FadeInImage(
-              image: NetworkImage(
-                  "https://image.tmdb.org/t/p/w200/" + movies[index].poster),
+              image: movies[index].poster == null
+                  ? AssetImage('assets/images/no-image.jpg')
+                  : NetworkImage("https://image.tmdb.org/t/p/w200/" +
+                      movies[index].poster),
               placeholder: AssetImage('assets/images/no-image.jpg'),
               width: 50.0,
               fit: BoxFit.contain),
