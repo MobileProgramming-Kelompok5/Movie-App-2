@@ -120,7 +120,7 @@ class _TopMoviesState extends State<TopMovies> {
       );
     } else
       return Container(
-        height: MediaQuery.of(context).size.height * 0.7,
+        height: MediaQuery.of(context).size.height * 0.695,
         padding: EdgeInsets.only(left: 10.0),
         child: ListView.builder(
           scrollDirection: Axis.vertical,
