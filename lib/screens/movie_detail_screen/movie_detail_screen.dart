@@ -110,10 +110,13 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                             decoration: new BoxDecoration(
                               shape: BoxShape.rectangle,
                               image: new DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: NetworkImage(
-                                      "https://image.tmdb.org/t/p/original/" +
-                                          movie.backPoster)),
+                                fit: BoxFit.cover,
+                                image: movie.poster == null
+                                    ? AssetImage('assets/images/no-image.jpg')
+                                    : NetworkImage(
+                                        "https://image.tmdb.org/t/p/w200/" +
+                                            movie.poster),
+                              ),
                             ),
                             child: Container(
                               decoration: BoxDecoration(
