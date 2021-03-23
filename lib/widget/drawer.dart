@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app_3/screens/help_page/help_page.dart';
+
+import 'package:movie_app_3/screens/help_screen/help_screen.dart';
 import 'package:movie_app_3/widget/custom_box.dart';
 import '../widget/custom_box.dart';
 import '../style/theme.dart' as style;
