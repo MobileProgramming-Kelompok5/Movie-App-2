@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app_3/bloc/get_movies_bloc.dart';
-import 'package:movie_app_3/bloc/get_search_bloc.dart';
-import 'package:movie_app_3/model/movie_response.dart';
 import 'package:movie_app_3/model/movie_response.dart';
 import 'package:movie_app_3/screens/movie_detail_screen/movie_detail_screen.dart';
 

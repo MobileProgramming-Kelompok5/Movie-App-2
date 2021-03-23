@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app_3/screens/help_page/help_page.dart';
 import 'package:movie_app_3/widget/custom_box.dart';
 import '../widget/custom_box.dart';
 import '../style/theme.dart' as style;
@@ -57,7 +58,14 @@ class MyDrawer extends StatelessWidget {
                             fontSize: 20,
                             fontFamily: 'Raleway'),
                       ),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Help(),
+                          ),
+                        );
+                      },
                     ),
                     SizedBox(
                       height: 20,
