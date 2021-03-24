@@ -29,6 +29,9 @@ class DataSearch extends SearchDelegate {
           fontFamily: 'Poppins',
         ),
       ),
+      textSelectionTheme: TextSelectionThemeData(
+        cursorColor: Colors.grey,
+      ),
     );
   }
 
