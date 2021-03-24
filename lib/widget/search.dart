@@ -6,9 +6,32 @@ import '../model/movie.dart';
 import '../repository/repository.dart';
 
 class DataSearch extends SearchDelegate {
-  // void initState() {
-  //   searchBloc..getSearch(query);
-  // }
+  @override
+  String get searchFieldLabel => 'Search...';
+
+  @override
+  ThemeData appBarTheme(BuildContext context) {
+    assert(context != null);
+    return ThemeData(
+      primaryColor: Colors.black,
+      primaryIconTheme: IconThemeData(
+        color: Colors.white,
+      ),
+      textTheme: TextTheme(
+        headline6: TextStyle(
+          color: Colors.white,
+          fontSize: 18,
+        ),
+      ),
+      inputDecorationTheme: InputDecorationTheme(
+        hintStyle: TextStyle(
+          color: Colors.white70,
+          fontFamily: 'Poppins',
+        ),
+      ),
+    );
+  }
+
   final movieRepo = MovieRepository();
   @override
   List<Widget> buildActions(BuildContext context) {
@@ -36,7 +59,20 @@ class DataSearch extends SearchDelegate {
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    if (query.isEmpty) return Container();
+    if (query.isEmpty)
+      return Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Colors.black,
+              Color(0xff112339),
+              Colors.black,
+            ],
+          ),
+        ),
+      );
 
     return FutureBuilder<MovieResponse>(
       future: movieRepo.getSearch(query),
@@ -57,55 +93,93 @@ class DataSearch extends SearchDelegate {
 
   Widget _buildHomeWidget(MovieResponse data) {
     List<Movie> movies = data.movies;
-    return ListView.builder(
-      itemCount: movies.length,
-      itemBuilder: (context, index) {
-        return ListTile(
-          leading: FadeInImage(
-              image: movies[index].poster == null
-                  ? AssetImage('assets/images/no-image.jpg')
-                  : NetworkImage("https://image.tmdb.org/t/p/w200/" +
-                      movies[index].poster),
-              placeholder: AssetImage('assets/images/no-image.jpg'),
-              width: 50.0,
-              fit: BoxFit.contain),
-          title: Text(
-            movies[index].title,
-            style: TextStyle(fontFamily: 'Poppins'),
+    return SafeArea(
+      child: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Colors.black,
+              Color(0xff112339),
+              Colors.black,
+            ],
           ),
-          subtitle: Text(
-            movies[index].overview,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(fontFamily: 'Raleway'),
-          ),
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => MovieDetailScreen(movie: movies[index]),
+        ),
+        child: ListView.builder(
+          itemCount: movies.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              leading: FadeInImage(
+                  image: movies[index].poster == null
+                      ? AssetImage('assets/images/no-image.jpg')
+                      : NetworkImage("https://image.tmdb.org/t/p/w200/" +
+                          movies[index].poster),
+                  placeholder: AssetImage('assets/images/no-image.jpg'),
+                  width: 50.0,
+                  fit: BoxFit.contain),
+              title: Text(
+                movies[index].title,
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                  color: Colors.white,
+                  height: 2,
+                ),
               ),
+              subtitle: Text(
+                movies[index].overview == ""
+                    ? "- There is no overview -"
+                    : movies[index].overview,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontFamily: 'Raleway',
+                  color: Colors.white60,
+                ),
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        MovieDetailScreen(movie: movies[index]),
+                  ),
+                );
+              },
             );
           },
-        );
-      },
+        ),
+      ),
     );
   }
 
   Widget _buildLoadingWidget() {
-    return Center(
-        child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        SizedBox(
-          height: 25.0,
-          width: 25.0,
-          child: CircularProgressIndicator(
-            valueColor: new AlwaysStoppedAnimation<Color>(Colors.black),
-            strokeWidth: 4.0,
-          ),
-        )
-      ],
-    ));
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Colors.black,
+            Color(0xff112339),
+            Colors.black,
+          ],
+        ),
+      ),
+      child: Center(
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(
+            height: 25.0,
+            width: 25.0,
+            child: CircularProgressIndicator(
+              valueColor: new AlwaysStoppedAnimation<Color>(Colors.white),
+              strokeWidth: 4.0,
+            ),
+          )
+        ],
+      )),
+    );
   }
 
   Widget _buildErrorWidget(String error) {

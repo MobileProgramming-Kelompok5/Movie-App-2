@@ -60,65 +60,14 @@ class _MovieInfoState extends State<MovieInfo> {
 
   Widget _buildMovieDetailWidget(MovieDetailResponse data) {
     MovieDetail detail = data.movieDetail;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Padding(
-          padding: EdgeInsets.only(left: 25.0, right: 50.0, top: 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    "DURATION",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w500,
-                        fontSize: 15.0),
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                  ),
-                  Text(detail.runtime.toString() + " min",
-                      style: TextStyle(
-                          color: Style.Colors.secondColor,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 13.0))
-                ],
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    "RELEASE DATE",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w500,
-                        fontSize: 15.0),
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                  ),
-                  Text(detail.releaseDate,
-                      style: TextStyle(
-                          color: Style.Colors.secondColor,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 13.0))
-                ],
-              )
-            ],
-          ),
-        ),
-        SizedBox(
-          height: 10.0,
-        ),
-        Padding(
-          padding: EdgeInsets.only(left: 25, top: 20),
+
+    if (detail.genres.length == 0) {
+      return Container(
+        width: MediaQuery.of(context).size.width,
+        child: Padding(
+          padding: const EdgeInsets.only(left: 25.0, right: 50.0, top: 20),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
@@ -131,41 +80,138 @@ class _MovieInfoState extends State<MovieInfo> {
               ),
               Divider(
                 color: Colors.white,
-                endIndent: MediaQuery.of(context).size.width * 0.83,
+                endIndent: MediaQuery.of(context).size.width * 0.7,
                 thickness: 1,
               ),
-              SizedBox(
-                height: 10.0,
-              ),
-              Container(
-                height: 38.0,
-                padding: EdgeInsets.only(right: 10.0, top: 10.0),
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: detail.genres.length,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: EdgeInsets.only(right: 10.0),
-                      child: Chip(
-                        padding: EdgeInsets.symmetric(horizontal: 5),
-                        label: Text(
-                          detail.genres[index].name,
-                          maxLines: 2,
-                          style: TextStyle(
-                            fontFamily: 'Raleway',
-                            fontWeight: FontWeight.w500,
-                            fontSize: 15.0,
-                          ),
-                        ),
-                      ),
-                    );
-                  },
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                child: Column(
+                  children: <Widget>[
+                    Text(
+                      "Genre is unknown",
+                      style:
+                          TextStyle(color: Colors.white, fontFamily: 'Raleway'),
+                    )
+                  ],
                 ),
               )
             ],
           ),
-        )
-      ],
-    );
+        ),
+      );
+    } else
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(left: 25.0, right: 50.0, top: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      "DURATION",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w500,
+                          fontSize: 15.0),
+                    ),
+                    SizedBox(
+                      height: 10.0,
+                    ),
+                    Text(
+                      detail.runtime.toString() + " min",
+                      style: TextStyle(
+                          color: Style.Colors.secondColor,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Poppins',
+                          fontSize: 12.0),
+                    )
+                  ],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      "RELEASE DATE",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w500,
+                          fontSize: 15.0),
+                    ),
+                    SizedBox(
+                      height: 10.0,
+                    ),
+                    Text(
+                      detail.releaseDate,
+                      style: TextStyle(
+                          color: Style.Colors.secondColor,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Poppins',
+                          fontSize: 12.0),
+                    )
+                  ],
+                )
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 10.0,
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 25, top: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  "GENRES",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.w500,
+                      fontSize: 20.0),
+                ),
+                Divider(
+                  color: Colors.white,
+                  endIndent: MediaQuery.of(context).size.width * 0.83,
+                  thickness: 1,
+                ),
+                SizedBox(
+                  height: 10.0,
+                ),
+                Container(
+                  height: 38.0,
+                  padding: EdgeInsets.only(right: 10.0, top: 10.0),
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: detail.genres.length,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: EdgeInsets.only(right: 10.0),
+                        child: Chip(
+                          padding: EdgeInsets.symmetric(horizontal: 5),
+                          label: Text(
+                            detail.genres[index].name,
+                            maxLines: 2,
+                            style: TextStyle(
+                              fontFamily: 'Raleway',
+                              fontWeight: FontWeight.w500,
+                              fontSize: 15.0,
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                )
+              ],
+            ),
+          )
+        ],
+      );
   }
 }

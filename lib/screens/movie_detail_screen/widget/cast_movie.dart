@@ -185,7 +185,9 @@ class _CastsState extends State<Casts> {
                       height: 3.0,
                     ),
                     Text(
-                      casts[index].character,
+                      casts[index].character == null
+                          ? "unknown"
+                          : casts[index].character,
                       maxLines: 2,
                       textAlign: TextAlign.center,
                       style: TextStyle(

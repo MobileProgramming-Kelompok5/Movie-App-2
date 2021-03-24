@@ -189,7 +189,9 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> {
                               Padding(
                                 padding: const EdgeInsets.only(right: 10),
                                 child: Text(
-                                  movie.overview,
+                                  movie.overview == ""
+                                      ? "- There is no overview -"
+                                      : movie.overview,
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 13.0,

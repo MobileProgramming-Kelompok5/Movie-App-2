@@ -122,106 +122,108 @@ class _TopMoviesState extends State<TopMovies> {
       return Container(
         height: MediaQuery.of(context).size.height * 0.695,
         padding: EdgeInsets.only(left: 10.0),
-        child: ListView.builder(
-          scrollDirection: Axis.vertical,
-          itemCount: movies.length,
-          itemBuilder: (context, index) {
-            return Padding(
-              padding: EdgeInsets.only(top: 10.0, bottom: 10.0, right: 15.0),
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          MovieDetailScreen(movie: movies[index]),
+        child: SafeArea(
+          child: ListView.builder(
+            scrollDirection: Axis.vertical,
+            itemCount: movies.length,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: EdgeInsets.only(top: 10.0, bottom: 10.0, right: 15.0),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            MovieDetailScreen(movie: movies[index]),
+                      ),
+                    );
+                  },
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(color: Colors.black, width: 1),
+                      borderRadius: BorderRadius.all(Radius.circular(20.0)),
                     ),
-                  );
-                },
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                    side: BorderSide(color: Colors.black, width: 1),
-                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                  ),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Hero(
-                        tag: movies[index].id,
-                        child: Container(
-                            width: 120.0,
-                            height: 190.0,
-                            decoration: new BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(20),
-                                bottomLeft: Radius.circular(20),
-                                bottomRight: Radius.circular(40),
-                              ),
-                              shape: BoxShape.rectangle,
-                              image: new DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: NetworkImage(
-                                      "https://image.tmdb.org/t/p/w200/" +
-                                          movies[index].poster)),
-                            )),
-                      ),
-                      SizedBox(
-                        width: 40,
-                      ),
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.45,
-                        child: Column(
-                          children: [
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Text(
-                              movies[index].title,
-                              maxLines: 3,
-                              style: TextStyle(
-                                  height: 1.4,
-                                  color: Style.Colors.subtitleColor,
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'Poppins',
-                                  fontSize: 15.0),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Chip(
-                              backgroundColor: Style.Colors.secondColor,
-                              label: Text(
-                                'Rating: ' + movies[index].rating.toString(),
-                                style: TextStyle(fontFamily: 'Raleway'),
-                              ),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Text(
-                              movies[index].overview,
-                              overflow: TextOverflow.fade,
-                              textAlign: TextAlign.justify,
-                              maxLines: 3,
-                              style: TextStyle(
-                                  height: 1.4,
-                                  color: Style.Colors.subtitleColor,
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'Raleway',
-                                  fontSize: 11.0),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                          ],
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Hero(
+                          tag: movies[index].id,
+                          child: Container(
+                              width: 120.0,
+                              height: 190.0,
+                              decoration: new BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(20),
+                                  bottomLeft: Radius.circular(20),
+                                  bottomRight: Radius.circular(40),
+                                ),
+                                shape: BoxShape.rectangle,
+                                image: new DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: NetworkImage(
+                                        "https://image.tmdb.org/t/p/w200/" +
+                                            movies[index].poster)),
+                              )),
                         ),
-                      )
-                    ],
+                        SizedBox(
+                          width: 40,
+                        ),
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.45,
+                          child: Column(
+                            children: [
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Text(
+                                movies[index].title,
+                                maxLines: 3,
+                                style: TextStyle(
+                                    height: 1.4,
+                                    color: Style.Colors.subtitleColor,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Poppins',
+                                    fontSize: 15.0),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Chip(
+                                backgroundColor: Style.Colors.secondColor,
+                                label: Text(
+                                  'Rating: ' + movies[index].rating.toString(),
+                                  style: TextStyle(fontFamily: 'Raleway'),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Text(
+                                movies[index].overview,
+                                overflow: TextOverflow.fade,
+                                textAlign: TextAlign.justify,
+                                maxLines: 3,
+                                style: TextStyle(
+                                    height: 1.4,
+                                    color: Style.Colors.subtitleColor,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Raleway',
+                                    fontSize: 11.0),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            );
-          },
+              );
+            },
+          ),
         ),
       );
   }
