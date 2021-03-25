@@ -62,5 +62,5 @@ Caroline Wili Harto | 535190032
 
 ## Disclaimer :warning:
 
-This web is for educational purposes only
+This app is for educational purposes only
 
