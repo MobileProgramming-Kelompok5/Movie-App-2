@@ -37,27 +37,27 @@ Caroline Wili Harto | 535190032
 
 ### Welcome screen
 <pre>
-<img src="screenshots/welcome_1.jpg" width="40%"> <img src="screenshots/welcome_2.jpg" width="40%"> <img src="screenshots/welcome_3.jpg" width="40%">
+<img src="screenshots/welcome_1.jpg" width="35%"> <img src="screenshots/welcome_2.jpg" width="35%"> <img src="screenshots/welcome_3.jpg" width="35%">
 </pre>
 
 ### Home screen
 <pre>
-<img src="screenshots/home_1.jpg" width="40%"> <img src="screenshots/home_2.jpg" width="30%"> <img src="screenshots/home_3.jpg" width="40%"> <img src="screenshots/drawer.jpg" width="40%">  
+<img src="screenshots/home_1.jpg" width="35%"> <img src="screenshots/home_2.jpg" width="35%"> <img src="screenshots/home_3.jpg" width="35%"> <img src="screenshots/drawer.jpg" width="35%">  
 </pre>
 
 ### Detail screen
 <pre>
-<img src="screenshots/detail_1.jpg" width="40%"> <img src="screenshots/detail_2.jpg" width="40%"> <img src="screenshots/trailer.jpg" width="40%"> 
+<img src="screenshots/detail_1.jpg" width="35%"> <img src="screenshots/detail_2.jpg" width="35%"> <img src="screenshots/trailer.jpg" width="35%"> 
 </pre>
 
 ### Help and About Us screen
 <pre>
-<img src="screenshots/help.jpg" width="40%"> <img src="screenshots/about_us.jpg" width="40%"> 
+<img src="screenshots/help.jpg" width="35%"> <img src="screenshots/about_us.jpg" width="35%"> 
 </pre>
 
 ### Search
 <pre>
-<img src="screenshots/search_1.jpg" width="40%"> <img src="screenshots/search_2.jpg" width="40%"> 
+<img src="screenshots/search_1.jpg" width="35%"> <img src="screenshots/search_2.jpg" width="35%"> 
 </pre>
 
 ## Disclaimer :warning:
