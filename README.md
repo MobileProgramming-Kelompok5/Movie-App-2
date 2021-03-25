@@ -60,6 +60,14 @@ Caroline Wili Harto | 535190032
 <img src="screenshots/search_1.jpg" width="35%"> <img src="screenshots/search_2.jpg" width="35%"> 
 </pre>
 
+## Built With 🛠
+* [BLoC Pattern](https://bloclibrary.dev/) - Business logic component to separate the business logic with UI.
+* [Dio](https://github.com/flutterchina/dio/) - A type-safe HTTP client.
+* [RxDart](https://pub.dev/packages/rxdart) - adds additional capabilities to Dart Streams and StreamControllers.
+* [Shared Preferences](https://pub.dev/packages/shared_preferences) - Cache implementation approach.
+* [Font Awesome Flutter](https://pub.dev/packages/font_awesome_flutter) - Icon pack available as set of Flutter Icons.
+* [Youtube Player](https://pub.dev/packages/youtube_player_flutter) - Play Trailer Video.
+
 ## Disclaimer :warning:
 
 This app is for educational purposes only
