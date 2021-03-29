@@ -1,6 +1,8 @@
 # MOVIEZ 🎬🎞
 This app is a movie app which provides informations and trailers about movies.
 
+CLICK -> [VIDEO DEMO APP](https://youtu.be/bRYxGw4qBBs) FOR THE DEMO
+
 ![GitHub stars](https://img.shields.io/github/stars/MobileProgramming-Kelompok5/Movie-App-2?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/MobileProgramming-Kelompok5/Movie-App-2?style=social)
 ![GitHub watchers](https://img.shields.io/github/watchers/MobileProgramming-Kelompok5/Movie-App-2?style=social)
